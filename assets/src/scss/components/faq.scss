@@ -1,0 +1,118 @@
+.faq {
+  padding: 60px 0 40px;
+  background: #eee;
+
+  @include media(">=tablet") {
+    padding: 80px 0;
+  }
+
+  @include media(">=desktop") {
+    padding: 119px 0 117px;
+  }
+
+  .container {
+    max-width: 1114px;
+  }
+
+  &__slider {
+    padding: 0 0 50px;
+
+    @include media(">=tablet") {
+      padding: 0;
+    }
+
+    &-text {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+
+      .title {
+        @include media(">=desktop") {
+          margin: 0 0 14px;
+        }
+      }
+
+      h3 {
+        margin: 0 0 12px;
+
+        @include media(">=desktop") {
+          margin: 0 0 20px;
+        }
+      }
+
+      blockquote {
+        font: 16px/1.78 $base-font-serif;
+        padding: 0;
+        margin: 0 0 30px;
+
+        @include media(">=tablet") {
+          font-size: 18px;
+        }
+
+        p {
+          margin: 0 0 15px;
+        }
+
+        footer {
+          font: 15px/1.9 $base-font-sans-serif;
+        }
+      }
+
+      .btn {
+        @include media("<tablet") {
+          padding: 16px 20px 14px;
+        }
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      @include animate(color);
+
+      display: none;
+
+      @include media(">=tablet") {
+        display: flex;
+        color: $primary;
+        width: auto;
+        height: auto;
+        margin: -36px 0 0 -10px;
+      }
+
+      &:after {
+        content: "\e907";
+        font-family: "icomoon";
+
+        @include media(">=tablet") {
+          font-size: 48px;
+        }
+
+        @include media(">=desktop") {
+          font-size: 72px;
+        }
+      }
+
+      &:hover {
+        color: #c8a74b;
+      }
+    }
+
+    .swiper-button-next {
+      @include media(">=tablet") {
+        margin: -36px -10px 0 0;
+      }
+
+      &:after {
+        content: "\e908";
+      }
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+
+      @include media(">=tablet") {
+        display: none;
+      }
+    }
+  }
+}

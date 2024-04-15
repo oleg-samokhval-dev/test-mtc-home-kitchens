@@ -1,0 +1,66 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__img {
+    order: 2;
+
+    @include media(">=desktop") {
+      width: 50%;
+      min-height: 580px;
+      order: 1;
+    }
+
+    @include media(">=widescreen") {
+      min-height: 667px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    order: 1;
+    padding: 60px 15px;
+    text-align: center;
+
+    @include media(">=tablet") {
+      padding: 80px 32px;
+    }
+
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      width: 50%;
+      padding: 32px;
+      order: 2;
+    }
+
+    @include media(">=widescreen") {
+      max-width: 680px;
+      padding: 30px 30px 30px 70px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      @include media(">=widescreen") {
+        margin: 0 0 28px;
+      }
+    }
+
+    p {
+      margin: 0 0 16px;
+
+      @include media(">=widescreen") {
+        margin: 0 0 32px;
+      }
+    }
+  }
+}

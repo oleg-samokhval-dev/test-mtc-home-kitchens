@@ -1,0 +1,177 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $base-font-sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $gray;
+  display: flex;
+  flex-direction: column;
+
+  &.nav-active {
+    overflow: hidden;
+
+    .header {
+      &__nav {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+#wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+a {
+  @include animate(color);
+}
+
+.btn {
+  @include animate(background color);
+
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.334;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 32px 14px;
+  color: $white;
+  background: $primary;
+  letter-spacing: 3px;
+  border-radius: 3em;
+
+  @include media(">=desktop") {
+    padding: 22px 58px 18px;
+  }
+
+  &:hover {
+    background: #c8a74b;
+  }
+}
+
+.container {
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+main {
+  flex-grow: 1;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+h1 {
+  line-height: 1.1154;
+  letter-spacing: -1px;
+
+  @include media(">=tablet") {
+    font-size: 42px;
+  }
+
+  @include media(">=desktop") {
+    font-size: 52px;
+  }
+}
+
+h2 {
+  line-height: 1.24;
+
+  @include media(">=tablet") {
+    font-size: 34px;
+  }
+
+  @include media(">=desktop") {
+    font-size: 42px;
+  }
+}
+
+h3 {
+  line-height: 1.3125;
+
+  @include media(">=tablet") {
+    font-size: 32px;
+  }
+}
+
+h4 {
+  line-height: 1.33333;
+
+  @include media(">=tablet") {
+    font-size: 24px;
+  }
+}
+
+h5 {
+  line-height: 1.444444;
+
+  @include media(">=tablet") {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  @include media(">=tablet") {
+    font-size: 16px;
+  }
+}
+
+.title {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: $primary;
+  margin: 0 0 5px;
+
+  @include media(">=tablet") {
+    letter-spacing: 3px;
+  }
+}
+
+.social {
+  @extend %listreset;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 50px;
+    height: 5px;
+    border-radius: 3px;
+    opacity: 1;
+    background: $white;
+
+    &.swiper-pagination-bullet-active {
+      background: $primary;
+    }
+  }
+}
